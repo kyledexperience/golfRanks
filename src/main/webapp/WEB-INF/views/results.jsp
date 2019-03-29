@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +20,11 @@
 		<a href="/">Choose Again</a>
 
 		<h1 class="display-4">Welcome to Golf Rankings</h1>
-		
+
 		<a href="/new/${season1 - 1}">See&nbsp;${season1 - 1}</a>
 		
 		<a href="/new/${season2 + 1}">See&nbsp;${season2 + 1}</a>
-		
+
 		<!-- ROW outer div -->
 		<div class="row">
 

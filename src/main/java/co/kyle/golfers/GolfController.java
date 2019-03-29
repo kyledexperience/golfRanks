@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,25 +28,52 @@ public class GolfController {
 
 		ModelAndView mav = new ModelAndView("result");
 
-		Integer year1 = year;
+		Integer year1 = range(year);
 		Integer year2 = year + 1;
-		Integer year3 = year + 2;
 
 		List<Players> player1 = api.getPlayersByYear(year1);
 		List<Players> player2 = api.getPlayersByYear(year2);
-		List<Players> player3 = api.getPlayersByYear(year3);
 
-		if (player1 != null || player2 != null || player3 != null) {
-			mav.addObject("player1", player1);
-			mav.addObject("player2", player2);
-			mav.addObject("player3", player3);
-			mav.addObject("season1", year1);
-			mav.addObject("season2", year2);
-			mav.addObject("season3", year3);
-			return mav;
+		mav.addObject("player1", player1);
+		mav.addObject("player2", player2);
+
+		mav.addObject("season1", year1);
+		mav.addObject("season2", year2);
+
+		return mav;
+	}
+
+	@RequestMapping("/new/{year}")
+	public ModelAndView result(@PathVariable(value = "year", required = false) Integer year) {
+
+		ModelAndView mav = new ModelAndView("results");
+
+		Integer year1 = range(year);
+		Integer year2 = year + 1;
+
+		List<Players> player1 = api.getPlayersByYear(year1);
+		List<Players> player2 = api.getPlayersByYear(year2);
+
+		mav.addObject("player1", player1);
+		mav.addObject("player2", player2);
+
+		mav.addObject("season1", year1);
+		mav.addObject("season2", year2);
+
+		return mav;
+
+	}
+
+	private Integer range(Integer year) {
+
+		if (year < 2015) {
+
+			return 2015;
+		} else if (year > 2018) {
+			return 2018;
+		} else {
+			return year;
 		}
-
-		return new ModelAndView("redirect:/");
 
 	}
 

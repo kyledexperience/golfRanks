@@ -15,17 +15,14 @@
 
 		<div class="form-group">
 			<form action="/result">
-				<label>YEAR</label>
-				<select name="year" multiple class="form-control">
-				<option>2018</option>	
-				<option>2017</option>
-				<option>2016</option>
-				<option>2015</option>
+				<label>YEAR</label> <select name="year" multiple
+					class="form-control">
+					<option>2018</option>
+					<option>2017</option>
+					<option>2016</option>
+					<option>2015</option>
 				</select>
-				
-				
-				
-				<button class="btn btn-dark" type="submit"> GO </button>
+				<button class="btn btn-dark" type="submit">GO</button>
 			</form>
 
 		</div>
