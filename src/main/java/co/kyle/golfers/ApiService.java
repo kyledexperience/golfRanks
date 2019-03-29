@@ -40,7 +40,11 @@ public class ApiService {
 	@Value("${golf.key2}")
 	private String golfkey2;
 
-	public List<Players> getPlayersByYear(String season) {
+	public List<Players> getPlayersByYear(Integer year) {
+
+		System.out.println(year.toString());
+
+		String season = year.toString();
 
 		HttpHeaders headers = new HttpHeaders();
 
