@@ -29,7 +29,9 @@ public class GolfController {
 		ModelAndView mav = new ModelAndView("result");
 
 		Integer year1 = range(year);
-		Integer year2 = year + 1;
+		Integer year2 = range(year) + 1;
+
+		System.out.println("1st time" + year1 + " " + year2);
 
 		List<Players> player1 = api.getPlayersByYear(year1);
 		List<Players> player2 = api.getPlayersByYear(year2);
@@ -49,7 +51,9 @@ public class GolfController {
 		ModelAndView mav = new ModelAndView("results");
 
 		Integer year1 = range(year);
-		Integer year2 = year + 1;
+		Integer year2 = range(year) + 1;
+
+		System.out.println("2nd time" + year1 + " " + year2);
 
 		List<Players> player1 = api.getPlayersByYear(year1);
 		List<Players> player2 = api.getPlayersByYear(year2);
@@ -66,9 +70,8 @@ public class GolfController {
 
 	private Integer range(Integer year) {
 
-		if (year < 2015) {
-
-			return 2015;
+		if (year < 2016) {
+			return 2016;
 		} else if (year > 2018) {
 			return 2018;
 		} else {

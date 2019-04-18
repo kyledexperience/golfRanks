@@ -9,7 +9,8 @@
 <title>Ranks</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css
-">
+"/>
+<link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
 
@@ -28,7 +29,7 @@
 
 			<div class="table-responsive col-md">
 
-				<table class="table">
+				<table class="table" id="table">
 					<tr>
 						<th>Name</th>
 						<th>${season1}&nbsp;Ranking</th>
@@ -50,7 +51,7 @@
 			</div>
 
 			<div class="table-responsive col-md">
-				<table class="table">
+				<table class="table" id="table">
 					<tr>
 						<th>Name</th>
 						<th>${season2}&nbsp;Ranking</th>

@@ -7,7 +7,8 @@
 <title>Home</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css
-">
+"/>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
@@ -18,7 +19,7 @@
 				<label>YEAR</label> <select name="year" multiple
 					class="form-control">
 					<option>2018</option>
-					<option>2017</option>
+					<option selected>2017</option>
 					<option>2016</option>
 					<option>2015</option>
 				</select>

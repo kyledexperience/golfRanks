@@ -42,15 +42,11 @@ public class ApiService {
 
 	public List<Players> getPlayersByYear(Integer year) {
 
-		System.out.println(year.toString());
-
-		String season = year.toString();
-
 		HttpHeaders headers = new HttpHeaders();
 
 		headers.add("Ocp-Apim-Subscription-Key", golfkey);
 
-		String url = "https://api.fantasydata.net/golf/v2/JSON/PlayerSeasonStats/" + season;
+		String url = "https://api.fantasydata.net/golf/v2/JSON/PlayerSeasonStats/" + year.toString();
 
 		ResponseEntity<List<Players>> apiResponse = restTemplate.exchange(url, HttpMethod.GET,
 				new HttpEntity<>(headers), new ParameterizedTypeReference<List<Players>>() {
